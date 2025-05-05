@@ -47,7 +47,8 @@ class PhoneBookTest {
     @Test
     void printAllNamesGiveAnswer() {
         PhoneBook phoneBook = new PhoneBook();
-        phoneBook.add("Вася", "123");
+        phoneBook.add("Вася", "8 (999) 777-88-00");
+        phoneBook.add("Петя", "8 (999) 777-88-11");
 
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();
         PrintStream originalOut = System.out;
@@ -57,7 +58,10 @@ class PhoneBookTest {
 
         System.setOut(originalOut);
 
-        String expected = "Вася" + System.lineSeparator();
+        String expected =
+                "Вася" + System.lineSeparator() +
+                        "Петя" + System.lineSeparator();
+
         assertEquals(expected, outContent.toString());
     }
 }
