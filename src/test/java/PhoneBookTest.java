@@ -8,12 +8,12 @@ class PhoneBookTest {
     @Test
     void addReturnsTwoWhenInputIsTwo() {
         PhoneBook phoneBook = new PhoneBook();
-        assertEquals(2, phoneBook.add(2));
+        assertEquals(1, phoneBook.add("Вася", "8 (999) 777-88-00"));
     }
 
     @Test
     void addReturnsOneWhenInputIsOne() {
         PhoneBook phoneBook = new PhoneBook();
-        assertEquals(1, phoneBook.add(1));
+        assertEquals(1, phoneBook.add("Вася", "8 (999) 777-88-88"));
     }
 }
