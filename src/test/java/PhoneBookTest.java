@@ -19,10 +19,18 @@ class PhoneBookTest {
     }
 
     @Test
-    void replaceWhenSameName() {
+    void addReplaceWhenSameName() {
         PhoneBook phoneBook = new PhoneBook();
         assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-11"));
         assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-22"));
         assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-33"));
+    }
+
+
+    @Test
+    void findByNumberGiveAnswer() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Вася", "8 (999) 777-88-00");
+        assertEquals("Вася", phoneBook.findByNumber("8 (999) 777-88-11"));
     }
 }

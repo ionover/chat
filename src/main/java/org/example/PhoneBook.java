@@ -13,8 +13,8 @@ public class PhoneBook {
         return book.size();
     }
 
-    public int findByNumber(String name, String number) {
-        return 0;
+    public String findByNumber(String number) {
+        return null;
     }
 
     public int findByName(String name, String number) {
