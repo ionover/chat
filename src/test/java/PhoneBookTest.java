@@ -6,14 +6,23 @@ import org.junit.jupiter.api.Test;
 class PhoneBookTest {
 
     @Test
-    void addReturnsTwoWhenInputIsTwo() {
-        PhoneBook phoneBook = new PhoneBook();
-        assertEquals(1, phoneBook.add("Вася", "8 (999) 777-88-00"));
-    }
-
-    @Test
     void addReturnsOneWhenInputIsOne() {
         PhoneBook phoneBook = new PhoneBook();
         assertEquals(1, phoneBook.add("Вася", "8 (999) 777-88-88"));
+    }
+
+    @Test
+    void addReturnsTwoWhenInputIsTwo() {
+        PhoneBook phoneBook = new PhoneBook();
+        assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-11"));
+        assertEquals(2, phoneBook.add("Вася2", "8 (999) 777-88-22"));
+    }
+
+    @Test
+    void replaceWhenSameName() {
+        PhoneBook phoneBook = new PhoneBook();
+        assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-11"));
+        assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-22"));
+        assertEquals(1, phoneBook.add("Вася1", "8 (999) 777-88-33"));
     }
 }
