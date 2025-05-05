@@ -3,6 +3,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.example.PhoneBook;
 import org.junit.jupiter.api.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.PrintStream;
+
 class PhoneBookTest {
 
     @Test
@@ -38,5 +41,23 @@ class PhoneBookTest {
         PhoneBook phoneBook = new PhoneBook();
         phoneBook.add("Вася", "8 (999) 777-88-00");
         assertEquals("8 (999) 777-88-00", phoneBook.findByName("Вася"));
+    }
+
+
+    @Test
+    void printAllNamesGiveAnswer() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Вася", "123");
+
+        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
+        PrintStream originalOut = System.out;
+        System.setOut(new PrintStream(outContent));
+
+        phoneBook.printAllNames();
+
+        System.setOut(originalOut);
+
+        String expected = "Вася" + System.lineSeparator();
+        assertEquals(expected, outContent.toString());
     }
 }
