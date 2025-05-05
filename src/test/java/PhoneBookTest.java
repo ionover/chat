@@ -32,4 +32,11 @@ class PhoneBookTest {
         phoneBook.add("Вася", "8 (999) 777-88-00");
         assertEquals("Вася", phoneBook.findByNumber("8 (999) 777-88-00"));
     }
+
+    @Test
+    void findByNameGiveAnswer() {
+        PhoneBook phoneBook = new PhoneBook();
+        phoneBook.add("Вася", "8 (999) 777-88-00");
+        assertEquals("8 (999) 777-88-00", phoneBook.findByName("Вася"));
+    }
 }

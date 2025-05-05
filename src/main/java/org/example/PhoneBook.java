@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.HashMap;
-import java.util.Map;
 import java.util.TreeMap;
 
 public class PhoneBook {
@@ -25,8 +24,8 @@ public class PhoneBook {
         return numberToName.get(number);
     }
 
-    public int findByName(String name, String number) {
-        return 0;
+    public String findByName(String name) {
+        return null;
     }
 
     public int printAllNames(String name, String number) {
